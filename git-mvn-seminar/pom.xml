@@ -5,7 +5,7 @@
 
 	<groupId>cz.fi.muni</groupId>
 	<artifactId>git-mvn-seminar</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>git-mvn-seminar</name>
@@ -22,8 +22,16 @@
 	<modules>
 		<module>car-shop</module>
 	</modules>
-	
-	
+        
+        <build>
+            <plugins>
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>0.7.5.201505241946</version>
+                </plugin>
+            </plugins>
+        </build>
 
 	<dependencyManagement>
 		<dependencies>
@@ -41,5 +49,5 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
+        
 </project>
