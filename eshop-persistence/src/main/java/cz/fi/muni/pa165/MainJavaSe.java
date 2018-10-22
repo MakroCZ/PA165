@@ -134,6 +134,7 @@ public class MainJavaSe {
                     prod.setName("Guitar");
                     prod.setColor(Color.BLACK);
                     prod.setAddedDate(LocalDate.of(2011, 1, 20));
+                    entMan.persist(prod);
                     entMan.getTransaction().commit();
                 } finally {
                     entMan.close();
@@ -143,7 +144,7 @@ public class MainJavaSe {
 		EntityManager em = emf.createEntityManager();
 		em.getTransaction().begin();
 		Product p = em.createQuery("select p from Product p", Product.class)
-				.getSingleResult(); // Error
+				.getSingleResult();
 		em.getTransaction().commit();
 		em.close();
 
